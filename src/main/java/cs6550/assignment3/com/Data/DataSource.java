@@ -18,19 +18,14 @@ public class DataSource {
 
     @Getter
     private static final int POOL_SIZE = 75;
-    private static final int MIN_IDLE_TIME = 5;
-
 
     private static HikariConfig hikariConfig = new HikariConfig();
     private static HikariDataSource hikariDataSource;
 
     static {
-        hikariConfig.setJdbcUrl("jdbc:mysql://ski-db.cns5d9orpwwz.us-west-2.rds.amazonaws.com:3306/ski");
-        hikariConfig.setUsername("admin");
-        hikariConfig.setPassword("databasepassword");
-//        hikariConfig.setJdbcUrl(DB_URL);
-//        hikariConfig.setUsername(DB_USERNAME);
-//        hikariConfig.setPassword(DB_PASSWORD);
+        hikariConfig.setJdbcUrl(DB_URL);
+        hikariConfig.setUsername(DB_USERNAME);
+        hikariConfig.setPassword(DB_PASSWORD);
 
         hikariConfig.setDriverClassName(DB_DRIVER_CLASS_NAME);
 

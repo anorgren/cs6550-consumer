@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 @AllArgsConstructor
 public class DatabaseWriteThread implements Runnable {
-    private static final String QUEUE_NAME_PERSISTENT = "SKIER_WRITE_QUEUE_PERSISTENT2";
+    private static final String QUEUE_NAME_PERSISTENT = "SKIER_WRITE_QUEUE_PERSISTENT";
     private static final String QUEUE_NAME_NOT_PERSISTENT = "SKIER_WRITE_QUEUE_NOT_PERSISTENT";
     private final boolean AUTO_ACK = true;
     private final boolean IS_DURABLE = false;
@@ -42,7 +42,6 @@ public class DatabaseWriteThread implements Runnable {
                   System.out.println("Writing to db");
                   SkierDatabaseAccess.insertLiftRide(resortID, liftID, skierID, dayID, time, vertical);
 
-//                  channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
               } catch (SQLException sqlE) {
                   System.err.println("Unable to write to database");
                   sqlE.printStackTrace();
