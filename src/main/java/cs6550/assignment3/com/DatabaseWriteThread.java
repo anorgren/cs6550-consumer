@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
 
 @AllArgsConstructor
 public class DatabaseWriteThread implements Runnable {
