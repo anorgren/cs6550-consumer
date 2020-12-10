@@ -23,12 +23,9 @@ public class DataSource {
     private static HikariDataSource hikariDataSource;
 
     static {
-        hikariConfig.setJdbcUrl("jdbc:mysql://skidb-aurora.cluster-cns5d9orpwwz.us-west-2.rds.amazonaws.com:3306/ski");
-        hikariConfig.setUsername("admin");
-        hikariConfig.setPassword("databasepassword");
-//        hikariConfig.setJdbcUrl(DB_URL);
-//        hikariConfig.setUsername(DB_USERNAME);
-//        hikariConfig.setPassword(DB_PASSWORD);
+        hikariConfig.setJdbcUrl(DB_URL);
+        hikariConfig.setUsername(DB_USERNAME);
+        hikariConfig.setPassword(DB_PASSWORD);
 
         hikariConfig.setDriverClassName(DB_DRIVER_CLASS_NAME);
 
